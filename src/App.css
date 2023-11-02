@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@600;700&family=Roboto:wght@400;500;700&display=swap");
+
+:root {
+  --p1: #0033aa;
+  --p2: #0055cc;
+  --p3: #0077ff;
+  --p4: #1199ff;
+  --p5: #22bbff;
+  --b1: #111122;
+  --b2: #222233;
+  --b3: #334455;
+  --w1: #edf1f7;
+  --w2: #e1e1e1;
+  --w3: #bbccdd;
+  --strong: #ff8822;
+  --project-info: #5a6169;
+  --font1: "Roboto", Helvetica, Arial, sans-serif;
+  --font2: "Fira Code", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background: var(--b1);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--b1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--p1);
+}

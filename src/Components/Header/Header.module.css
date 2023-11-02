@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: var(--font1);
+  background: var(--p1);
+  box-shadow: -0.75rem 0 var(--p1);
+  position: fixed;
+  left: .75rem;
+  top: 0;
+  padding: 1rem 0;
+  z-index: 10;
+  transition: width 1s;
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.link {
+  font: 500 1.125rem/1 var(--font1);
+  border-radius: 1.5rem 0 0 1.5rem;
+  padding: 1rem 1.5rem 1rem .75rem;
+  cursor: pointer;
+}
+
+.link.active {
+  background-color: var(--b1);
+}
+
+.link > a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: px;
+  color: var(--w1);
+}
+
+.link .icon {
+  width: 2rem;
+  color: var(--w1);
+}
+
+.menuToggle {
+  background: none;
+  border: none;
+  margin-left: .9rem;
+  width: 2rem;
+  cursor: pointer;
+}
+

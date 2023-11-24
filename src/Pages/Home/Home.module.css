@@ -8,7 +8,7 @@
 }
 
 .name {
-  margin-top: .75rem;
+  margin-top: 0.75rem;
   line-height: 1.12;
   font-size: 4rem;
   font-family: var(--font2);
@@ -28,4 +28,21 @@
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 400;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.contact:hover > a > svg * {
+  transition: all .3s ease-in-out;
+  fill: #0055cc;
 }

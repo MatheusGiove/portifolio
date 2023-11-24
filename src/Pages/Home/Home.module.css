@@ -23,7 +23,7 @@
 }
 
 .title span {
-  background-image: linear-gradient(135deg, #1199ff, #0055cc);
+  background-image: linear-gradient(135deg, var(--p4), var(--p2));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -44,5 +44,5 @@
 
 .contact:hover > a > svg * {
   transition: all .3s ease-in-out;
-  fill: #0055cc;
+  fill: var(--p4);
 }

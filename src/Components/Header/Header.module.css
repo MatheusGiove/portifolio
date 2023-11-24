@@ -1,64 +1,139 @@
-.header {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: var(--font1);
-  background: var(--p1);
-  box-shadow: -0.75rem 0 var(--p1);
+.navigation {
   position: fixed;
-  left: .75rem;
   top: 0;
-  padding: 1rem 0;
-  z-index: 10;
-  transition: width 1s;
+  left: 0;
+  bottom: 0;
+  box-sizing: initial;
+  background: linear-gradient(270deg, var(--p1), var(--p2));
+  overflow-x: hidden;
+  transition: all .5s ease-in-out;
 }
 
-.nav {
-  display: flex;
-  flex: 1;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-}
-
-.linkList {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: .5rem;
+.list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 0 0 .5rem;
 }
 
 .link {
-  font: 500 1.125rem/1 var(--font1);
-  border-radius: 1.5rem 0 0 1.5rem;
-  padding: 1rem 1.5rem 1rem .75rem;
-  cursor: pointer;
+  position: relative;
+  width: 100%;
+  border-top-left-radius: 1.25rem;
+  border-bottom-left-radius: 1.25rem;
 }
 
 .link.active {
-  background-color: var(--b1);
+  background: var(--b1);
 }
 
 .link > a {
+  position: relative;
+  display: block;
+  align-items: center;
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  text-decoration: none;
+  color: var(--w2);
+  transition: all .25s ease;
+}
+
+.link > a:hover {
+  color: var(--strong);
+}
+
+.link:hover .svg > * {
+  fill: var(--strong);
+  transition: all .25s ease;
+}
+
+.link.active > a {
+  color: var(--strong);
+}
+
+.link.active .svg > *{
+  fill: var(--strong);
+}
+
+.link > b:nth-child(1) {
+  position: absolute;
+  top: -20px;
+  height: 1.25rem;
+  width: 100%;
+  background: var(--b1);
+  display: none;
+}
+
+.link > b:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg, var(--p1), var(--p2));;
+  border-bottom-right-radius: 1.25rem;
+}
+
+.link > b:nth-child(2) {
+  position: absolute;
+  bottom: -20px;
+  height: 1.25rem;
+  width: 100%;
+  background: var(--b1);
+  display: none;
+}
+
+.link > b:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg, var(--p1), var(--p2));
+  border-top-right-radius: 1.25rem;
+}
+
+.link.active b:nth-child(1),
+.link.active b:nth-child(2) {
+  display: block;
+}
+
+.icon {
+  position: relative;
+  display: block;
+  min-width: 4rem;
+  text-align: center;
+}
+
+.svg {
+  width: 2rem;
+}
+
+.page {
+  position: relative;
+  display: block;
+  padding-left: .75rem;
+  font: 500 1rem/1 Roboto, Helvetica, Arial, sans-serif;
+}
+
+.toggle {
+  position: fixed;
+  left: .5rem;
+  bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-left: px;
-  color: var(--w1);
-}
-
-.link .icon {
-  width: 2rem;
-  color: var(--w1);
-}
-
-.menuToggle {
-  background: none;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
   border: none;
-  margin-left: .9rem;
-  width: 2rem;
-  cursor: pointer;
+  background: none;
 }
 
+.toggle > svg {
+  cursor: pointer;
+  width: 2.5rem;
+}

@@ -1,12 +1,15 @@
 import Header from "./Components/Header/Header";
 import "./App.css";
+import Profile from "./Pages/Profile/Profile";
+import Home from "./Pages/Home/Home";
 
 const App = () => {
   return (
     <>
       <Header />
       <main>
-        <h1>Opa Galerinha</h1>
+        <Home />
+        <Profile />
       </main>
     </>
   );

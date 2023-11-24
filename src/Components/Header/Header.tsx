@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Header.module.css";
-// import logo from "../../Assets/svg/logos/logo.svg";
 import Home from "../../Assets/svg/navbar/Home";
 import Profile from "../../Assets/svg/navbar/Profile";
 import Graduate from "../../Assets/svg/navbar/Graduate";
@@ -10,77 +9,116 @@ import Contact from "../../Assets/svg/navbar/Contact";
 import Menu from "../../Assets/svg/navbar/Menu";
 
 const Header = () => {
-
   const [toggle, setToggle] = React.useState(false);
-
   React.useEffect(() => {
-    const links = document.querySelectorAll("li");
+    // Mudar o estilo do menu
+    const link = document.querySelectorAll<HTMLLIElement>(`.${styles.link}`);
+    const clickEvent = (e: MouseEvent) => {
+      if (e && e.currentTarget instanceof HTMLLIElement) {
+        link.forEach((item) => {
+          item.classList.remove(styles.active);
+        });
+        e.currentTarget.classList.add(styles.active);
+      }
+    };
+    link.forEach((item) => {
+      item.addEventListener("click", clickEvent);
+    });
 
-    function changeActive(this: HTMLElement) {
-      links.forEach(link => {
-        link.classList.remove(styles.active);
+    // Scroll suave
+    const SmootScroll = () => {
+      const link = document.querySelectorAll<HTMLAnchorElement>(`[data-link]`);
+      link.forEach(item => {
+        item.addEventListener("click", (event) => {
+          event.preventDefault()
+          const href = item.getAttribute("href")
+          if (href) {
+            const section = document.querySelector(href)
+            section?.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            })
+          }
+        })
       })
-      this.classList.add(styles.active);
     }
-
-    links.forEach((link) => {
-      link.addEventListener("click", changeActive);
-    }, []);
+    SmootScroll()
 
     return () => {
-      links.forEach((link) => {
-        link.removeEventListener("click", changeActive);
+      link.forEach((item) => {
+        item.removeEventListener("click", clickEvent);
       });
-    }
+    };
   }, []);
 
   return (
     <header className={styles.header}>
-      <a className={styles.logo} href="#home">
-        {toggle ? `True` : `False`}
-      </a>
-      <nav className={styles.nav}>
-        <ul className={styles.linkList}>
-          <li className={`${styles.link}`}>
-            <a href="#home">
-              <Home className={styles.icon} color="#fff" />
-              <span style={{display: toggle ? 'block' : 'none'}} className={styles.text}>Home</span>
+      <nav className={styles.navigation} style={{width: toggle ? "14rem" : "5rem"}}>
+        <ul className={styles.list}>
+          <li className={`${styles.link} ${styles.active}`}>
+            <b></b>
+            <b></b>
+            <a data-link href="#home">
+              <span className={styles.icon}>
+                <Home className={styles.svg} color="var(--w2)" />
+              </span>
+              <span className={styles.page}>Home</span>
             </a>
           </li>
           <li className={styles.link}>
-            <a href="#profile">
-              <Profile className={styles.icon} color="#fff" />
-              <span style={{display: toggle ? 'block' : 'none'}} className={styles.text}>Perfil</span>
+            <b></b>
+            <b></b>
+            <a data-link href="#profile">
+              <span className={styles.icon}>
+                <Profile className={styles.svg} color="var(--w2)" />
+              </span>
+              <span className={styles.page}>Perfil</span>
             </a>
           </li>
           <li className={styles.link}>
-            <a href="#graduate">
-              <Graduate className={styles.icon} color="#fff" />
-              <span style={{display: toggle ? 'block' : 'none'}} className={styles.text}>Graduação</span>
+            <b></b>
+            <b></b>
+            <a data-link href="#graduate">
+              <span className={styles.icon}>
+                <Graduate className={styles.svg} color="var(--w2)" />
+              </span>
+              <span className={styles.page}>Graduação</span>
             </a>
           </li>
           <li className={styles.link}>
-            <a href="#skills">
-              <Skills className={styles.icon} color="#fff" />
-              <span style={{display: toggle ? 'block' : 'none'}} className={styles.text}>Habilidades</span>
+            <b></b>
+            <b></b>
+            <a data-link href="#skills">
+              <span className={styles.icon}>
+                <Skills className={styles.svg} color="var(--w2)" />
+              </span>
+              <span className={styles.page}>Habilidades</span>
             </a>
           </li>
           <li className={styles.link}>
-            <a href="#projects">
-              <Projects className={styles.icon} color="#fff" />
-              <span style={{display: toggle ? 'block' : 'none'}} className={styles.text}>Projetos</span>
+            <b></b>
+            <b></b>
+            <a data-link href="#projects">
+              <span className={styles.icon}>
+                <Projects className={styles.svg} color="var(--w2)" />
+              </span>
+              <span className={styles.page}>Projetos</span>
             </a>
           </li>
           <li className={styles.link}>
-            <a href="#contact">
-              <Contact className={styles.icon} color="#fff" />
-              <span style={{display: toggle ? 'block' : 'none'}} className={styles.text}>Contato</span>
+            <b></b>
+            <b></b>
+            <a data-link href="#contact">
+              <span className={styles.icon}>
+                <Contact className={styles.svg} color="var(--w2)" />
+              </span>
+              <span className={styles.page}>Contato</span>
             </a>
           </li>
         </ul>
       </nav>
-      <button onClick={() => setToggle(!toggle)} className={styles.menuToggle}>
-        <Menu className={styles.toggleMenu} />
+      <button onClick={() => setToggle(!toggle)} className={styles.toggle}>
+        <Menu className={styles.menuToggle}/>
       </button>
     </header>
   );

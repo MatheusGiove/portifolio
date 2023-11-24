@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--w1);
+}
+
+.name {
+  margin-top: .75rem;
+  line-height: 1.12;
+  font-size: 4rem;
+  font-family: var(--font2);
+}
+
+.title {
+  line-height: 1.33;
+  font-size: 1.75rem;
+  font-family: var(--font1);
+  font-weight: 300;
+}
+
+.title span {
+  background-image: linear-gradient(135deg, #1199ff, #0055cc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 400;
+}

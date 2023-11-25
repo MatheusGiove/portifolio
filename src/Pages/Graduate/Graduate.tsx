@@ -3,7 +3,7 @@ import styles from './Graduate.module.css'
 
 const Graduate = () => {
   return (
-    <section className={styles.graduate}>Graduate</section>
+    <section id="graduate" className={styles.graduate}>Graduate</section>
   )
 }
 

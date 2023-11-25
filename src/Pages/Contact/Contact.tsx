@@ -3,7 +3,7 @@ import styles from './Contact.module.css'
 
 const Contact = () => {
   return (
-    <section className={styles.contact}>Contact</section>
+    <section id="contact" className={styles.contact}>Contact</section>
   )
 }
 

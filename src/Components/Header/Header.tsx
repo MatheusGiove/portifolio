@@ -6,10 +6,8 @@ import Graduate from "../../Assets/svg/navbar/Graduate";
 import Skills from "../../Assets/svg/navbar/Skills";
 import Projects from "../../Assets/svg/navbar/Projects";
 import Contact from "../../Assets/svg/navbar/Contact";
-import Menu from "../../Assets/svg/navbar/Menu";
 
 const Header = () => {
-  const [toggle, setToggle] = React.useState(false);
   React.useEffect(() => {
     // Mudar o estilo do menu
     const link = document.querySelectorAll<HTMLLIElement>(`.${styles.link}`);
@@ -28,21 +26,21 @@ const Header = () => {
     // Scroll suave
     const SmootScroll = () => {
       const link = document.querySelectorAll<HTMLAnchorElement>(`[data-link]`);
-      link.forEach(item => {
+      link.forEach((item) => {
         item.addEventListener("click", (event) => {
-          event.preventDefault()
-          const href = item.getAttribute("href")
+          event.preventDefault();
+          const href = item.getAttribute("href");
           if (href) {
-            const section = document.querySelector(href)
+            const section = document.querySelector(href);
             section?.scrollIntoView({
               behavior: "smooth",
-              block: "start"
-            })
+              block: "start",
+            });
           }
-        })
-      })
-    }
-    SmootScroll()
+        });
+      });
+    };
+    SmootScroll();
 
     return () => {
       link.forEach((item) => {
@@ -53,7 +51,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.navigation} style={{width: toggle ? "14rem" : "5rem"}}>
+      <nav className={styles.navigation}>
         <ul className={styles.list}>
           <li className={`${styles.link} ${styles.active}`}>
             <b></b>
@@ -117,9 +115,6 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <button onClick={() => setToggle(!toggle)} className={styles.toggle}>
-        <Menu className={styles.menuToggle}/>
-      </button>
     </header>
   );
 };

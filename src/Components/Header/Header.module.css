@@ -3,10 +3,15 @@
   top: 0;
   left: 0;
   bottom: 0;
+  width: 5rem;
   box-sizing: initial;
   background: linear-gradient(270deg, var(--p1), var(--p2));
   overflow-x: hidden;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.navigation:hover {
+  width: 14rem;
 }
 
 .list {
@@ -14,7 +19,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 3rem 0 0 .5rem;
+  padding: calc(50vh - 12rem) 0 0 0.5rem;
 }
 
 .link {
@@ -37,7 +42,7 @@
   width: 100%;
   text-decoration: none;
   color: var(--w2);
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .link > a:hover {
@@ -46,46 +51,35 @@
 
 .link:hover .svg > * {
   fill: var(--strong);
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .link.active > a {
   color: var(--strong);
 }
 
-.link.active .svg > *{
+.link.active .svg > * {
   fill: var(--strong);
 }
 
-.link > b:nth-child(1) {
+.link > b:nth-child(1),
+.link > b:nth-child(2) {
   position: absolute;
-  top: -20px;
   height: 1.25rem;
   width: 100%;
   background: var(--b1);
   display: none;
 }
 
-.link > b:nth-child(1)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(270deg, var(--p1), var(--p2));;
-  border-bottom-right-radius: 1.25rem;
+.link > b:nth-child(1) {
+  top: -20px;
 }
 
 .link > b:nth-child(2) {
-  position: absolute;
   bottom: -20px;
-  height: 1.25rem;
-  width: 100%;
-  background: var(--b1);
-  display: none;
 }
 
+.link > b:nth-child(1)::before,
 .link > b:nth-child(2)::before {
   content: "";
   position: absolute;
@@ -94,6 +88,13 @@
   height: 100%;
   width: 100%;
   background: linear-gradient(270deg, var(--p1), var(--p2));
+}
+
+.link > b:nth-child(1)::before {
+  border-bottom-right-radius: 1.25rem;
+}
+
+.link > b:nth-child(2)::before {
   border-top-right-radius: 1.25rem;
 }
 
@@ -116,24 +117,62 @@
 .page {
   position: relative;
   display: block;
-  padding-left: .75rem;
+  padding-left: 0.75rem;
   font: 500 1rem/1 Roboto, Helvetica, Arial, sans-serif;
 }
 
-.toggle {
-  position: fixed;
-  left: .5rem;
-  bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  border: none;
-  background: none;
+/* 768px */
+@media (max-width: 48rem) {
+  .navigation,
+  .navigation:hover {
+    position: fixed;
+    top: initial;
+    left: 0;
+    bottom: 0;
+    height: 4rem;
+    width: calc(100vw - 5px);
+    background: linear-gradient(180deg, var(--p1), var(--p2));
+  }
+
+  .list {
+    position: static;
+    display: flex;
+    padding: 0;
+  }
+
+  .link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .link.active {
+    background: none;
+  }
+  
+  .link.active .svg > * {
+    fill: var(--w2);
+  }
+
+  .link.active b:nth-child(1),
+  .link > b:nth-child(1)::before,
+  .link.active b:nth-child(2),
+  .link > b:nth-child(2)::before {
+    display: none;
+  }
+
+  .link > a {
+    justify-content: center;
+  }
+
+  .page {
+    display: none;
+  }
 }
 
-.toggle > svg {
-  cursor: pointer;
-  width: 2.5rem;
+/* 448px */
+@media (max-width: 28rem) {
+  .list > .link:nth-child(1),
+  .list > .link:nth-child(3) {
+    display: none;
+  }
 }

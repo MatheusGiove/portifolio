@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Graduate.module.scss'
+import styles from './Graduate.module.css'
 
 const Graduate = () => {
   return (

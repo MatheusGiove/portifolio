@@ -43,3 +43,15 @@ main {
 ::-webkit-scrollbar-thumb {
   background: var(--p1);
 }
+
+@media (max-width: 48rem) {
+  main {
+    padding: 0 1.25rem 4rem 1.25rem;
+  }
+}
+
+@media (max-width: 28rem) {
+  main {
+    padding: 0 10px 4rem 10px;
+  }
+}

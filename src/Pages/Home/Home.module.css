@@ -66,9 +66,14 @@
 
 /* 768px */
 @media (max-width: 48rem) { 
+  .home {
+    height: calc(100vh - 4rem);
+  }
+
   .name {
     font-size: 2rem;
   }
+
   .title {
     font-size: 1.25rem;
   }
@@ -79,6 +84,7 @@
   .name {
     font-size: 1.5rem;
   }
+
   .title {
     font-size: 1rem;
   }

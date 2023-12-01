@@ -19,7 +19,7 @@ const Home = () => {
           typeSpeed={50}
           loop
           backSpeed={30}
-          strings={["Desenvolvedor Front-End", "Web Designer", "Freelancer"]}
+          strings={["Desenvolvedor Front-End", "UI/UX Designer", "Freelancer"]}
           backDelay={1000}
           cursorChar="|"
         />

@@ -1,0 +1,43 @@
+.profile {
+  color: var(--w1);
+  font-family: var(--font1);
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary {
+  max-width: 90ch;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.description::before {
+  display: block;
+  content: "";
+  background: url("../../Assets/img/profile.jpeg") center center no-repeat;
+  background-size: cover;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+strong {
+  color: var(--strong);
+}

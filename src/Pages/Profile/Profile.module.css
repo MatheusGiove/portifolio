@@ -90,6 +90,11 @@ q {
   max-width: 80ch;
 }
 
+strong {
+  color: var(--strong);
+}
+
+
 @media (max-width: 64rem) {
   .description {
     grid-template-columns: 1fr;
@@ -125,8 +130,4 @@ q {
     display: flex;
     flex-direction: column;
   }
-}
-
-strong {
-  color: var(--strong);
 }

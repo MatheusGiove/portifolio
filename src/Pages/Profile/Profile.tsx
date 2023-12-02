@@ -10,15 +10,14 @@ const Profile = () => {
           <strong> Bacharelado em Ciência da Computação</strong> na
           <strong> Universidade Federal do ABC</strong> e complementando minha
           formação com cursos online de desenvolvimento web. Meus principais
-          conhecimentos são em <strong>React, JavaScript, HTML, CSS</strong> e
-          Também possuo experiência em <strong>UI Design.</strong>
+          conhecimentos são em <strong>React, JavaScript, HTML, CSS</strong> e  <strong>UI/UX Design.</strong>
         </p>
       </div>
       <div className={styles.description}>
         <div>
-          <h2>Desenvolvedor Front-End</h2>
-          <q>Não existem desafios impossíveis, apenas habilidades que ainda não adquiri.</q>
-          <ul>
+          <h2 className={styles.subTitle}>Desenvolvedor Front-End</h2>
+          <q>Não existem desafios impossíveis para mim, apenas habilidades que ainda não adquiri.</q>
+          <ul className={styles.list}>
             <li className={styles.info}>
               <span>Profissão: </span>Estudante
             </li>
@@ -33,7 +32,7 @@ const Profile = () => {
               <a href="">Contato</a>
             </li>
           </ul>
-          <h3>Um pouco mais:</h3>
+          <h3 className={styles.more}>Um pouco mais:</h3>
           <p>
             Comecei a jogar <strong>xadrez</strong> aos 7 anos e tive a
             oportunidade de participar do início de um projeto de xadrez no{" "}

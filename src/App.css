@@ -34,10 +34,8 @@ main {
   padding: 0 1.25rem 0 6.25rem;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+section[id]:not(:first-of-type) {
+  margin-top: 2rem;
 }
 
 ::-webkit-scrollbar {

@@ -1,10 +1,11 @@
-import React from 'react'
-import styles from './Graduate.module.css'
+import styles from "./Graduate.module.css";
 
 const Graduate = () => {
   return (
-    <section id="graduate" className={styles.graduate}>Graduate</section>
-  )
-}
+    <section id="graduate" className={styles.graduate}>
+      <h1 className="title">Formação</h1>
+    </section>
+  );
+};
 
-export default Graduate
+export default Graduate;
